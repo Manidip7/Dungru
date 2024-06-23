@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bte_card"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60dp"
+        android:layout_marginHorizontal="@dimen/_15dp"
+        android:layout_marginVertical="@dimen/_5dp"
+        app:cardCornerRadius="@dimen/_10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--Upi card-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/img_block_user"
+                android:layout_width="@dimen/_50dp"
+                app:shapeAppearance="@style/MyProfileImageShape"
+                android:layout_height="@dimen/_50dp"
+                android:layout_marginHorizontal="@dimen/_15dp"
+                android:src="@drawable/user_placeholder"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_bolck_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15dp"
+                android:fontFamily="@font/lato_bold"
+                android:text="Jon Roy"
+                android:textSize="@dimen/_16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_block_user"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/btn_unblock"
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="@dimen/_100dp"
+                android:layout_height="@dimen/_35dp"
+                android:layout_marginHorizontal="@dimen/_15dp"
+                android:background="@drawable/wallet_money"
+                android:fontFamily="@font/lato_regular"
+                android:gravity="center"
+                android:hint="@string/unblock"
+                android:paddingHorizontal="@dimen/_15dp"
+                android:textSize="@dimen/_14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="@dimen/_0dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_unblock"
+                app:layout_constraintEnd_toEndOf="@+id/btn_unblock"
+                app:layout_constraintStart_toStartOf="@+id/btn_unblock"
+                app:layout_constraintTop_toTopOf="@+id/btn_unblock"
+                app:lottie_autoPlay="true" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

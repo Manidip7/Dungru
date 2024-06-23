@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.setting.settingfragments.NotificationSettingFragment">
+
+    <!--ToolBar-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60dp"
+        android:elevation="@dimen/_15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--Back Button-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBack"
+            style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+            android:layout_width="@dimen/_40dp"
+            android:layout_height="@dimen/_40dp"
+            android:layout_marginHorizontal="@dimen/_10dp"
+            android:backgroundTint="@color/bg_back_btn_color"
+            android:onClick="onClick"
+            app:icon="@drawable/arrow_back"
+            app:iconSize="@dimen/_20dp"
+            app:iconTint="@color/pink"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--Title-->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_title"
+            style="@style/DynamicTextColorStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10dp"
+            android:fontFamily="@font/lato_bold"
+            android:maxLines="1"
+            android:text="@string/notification_new"
+            android:textSize="@dimen/_18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/view_grey_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBar">
+
+        <!--New post and story-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_15dp"
+            android:paddingVertical="@dimen/_10dp">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_new_post_and_story"
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_bold"
+                android:singleLine="true"
+                android:text="New post and story"
+                android:textSize="@dimen/_16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_bold"
+                android:hint="Notify on receiving post or story"
+                android:singleLine="true"
+                android:textSize="@dimen/_12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/txt_new_post_and_story"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/btn_switch_post_story"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30dp"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:thumbTint="@color/switch_button_thum_color" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!--           Likes-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_15dp"
+            android:paddingVertical="@dimen/_10dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/likes"
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_bold"
+                android:singleLine="true"
+                android:text="Likes"
+                android:textSize="@dimen/_16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_bold"
+                android:hint="When someone likes on your post"
+                android:singleLine="true"
+                android:textSize="@dimen/_12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/likes"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/btn_likes"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30dp"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:thumbTint="@color/switch_button_thum_color" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!--            Comments-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btn_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_15dp"
+            android:paddingVertical="@dimen/_10dp">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/comment"
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_bold"
+                android:singleLine="true"
+                android:text="Comments"
+                android:textSize="@dimen/_16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_bold"
+                android:hint="When some one comment on your post"
+                android:singleLine="true"
+                android:textSize="@dimen/_12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/comment"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/btn_comments"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30dp"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:thumbTint="@color/switch_button_thum_color" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--            Someone follows you-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_15dp"
+            android:paddingVertical="@dimen/_10dp">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_bold"
+                android:singleLine="true"
+                android:text="Someone follows you"
+                android:textSize="@dimen/_16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/btn_someone_follows"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30dp"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:thumbTint="@color/switch_button_thum_color" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!--            Some one goes live-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_15dp"
+            android:paddingVertical="@dimen/_10dp">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="@dimen/_150dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_bold"
+                android:singleLine="true"
+                android:text="Some one goes live"
+                android:textSize="@dimen/_16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/btn_goes_live"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30dp"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:thumbTint="@color/switch_button_thum_color" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--            Replies on your comment-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_15dp"
+            android:paddingVertical="@dimen/_10dp">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_bold"
+                android:singleLine="true"
+                android:text="@string/replies_on_your_comment"
+                android:textSize="@dimen/_16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/btn_Replies_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30dp"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:thumbTint="@color/switch_button_thum_color" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

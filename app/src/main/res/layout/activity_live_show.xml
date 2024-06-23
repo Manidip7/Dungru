@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/iclivebackground"
+    tools:context=".ui.home.liveShow.LiveShowActivity">
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <!--Back Button-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBack"
+        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+        android:layout_width="@dimen/_40dp"
+        android:layout_height="@dimen/_40dp"
+       android:layout_margin="@dimen/_10dp"
+        android:backgroundTint="@color/bg_back_btn_color"
+        android:elevation="@dimen/_15dp"
+        android:onClick="onClick"
+        app:icon="@drawable/arrow_back"
+        app:iconSize="@dimen/_20dp"
+        app:iconTint="@color/pink"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/layout_like_show"
+        android:layout_width="@dimen/_30dp"
+        android:layout_height="@dimen/_200dp"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.840"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/layout_bottom_all_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/edt_commend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5dp"
+                android:layout_marginEnd="@dimen/_5dp"
+                android:background="@drawable/bg_search"
+                android:backgroundTint="@color/view_grey_color"
+                android:padding="@dimen/_5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_gift"
+                app:layout_constraintTop_toTopOf="parent">
+                <!--Gift Button-->
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ic_chat"
+                    android:layout_width="@dimen/_25dp"
+                    android:layout_height="@dimen/_25dp"
+                    android:layout_marginStart="@dimen/_5dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_live_chat"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etChat"
+                    style="@style/MyEditTextStyle"
+                    android:layout_width="@dimen/_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_5dp"
+                    android:background="@android:color/transparent"
+                    android:hint="Type Something Here"
+                    android:inputType="textMultiLine"
+                    android:maxHeight="@dimen/_80dp"
+                    android:scrollbarAlwaysDrawVerticalTrack="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_send"
+                    app:layout_constraintStart_toEndOf="@+id/ic_chat"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--Gift Button-->
+                <ImageView
+                    android:id="@+id/btn_send"
+                    android:layout_width="@dimen/_30dp"
+                    android:layout_height="@dimen/_40dp"
+                    android:layout_marginEnd="@dimen/_2dp"
+                    android:onClick="onClick"
+                    android:src="@drawable/ic_send_live"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/btn_share"
+                android:layout_width="@dimen/_35dp"
+                android:layout_height="@dimen/_35dp"
+                android:layout_marginEnd="@dimen/_5dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_gift_live_page" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/btn_like"
+                android:layout_width="@dimen/_35dp"
+                android:layout_height="@dimen/_35dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_5dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_live_gift" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/btn_gift"
+                android:layout_width="@dimen/_35dp"
+                android:layout_height="@dimen/_35dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/ic_live_gift2" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

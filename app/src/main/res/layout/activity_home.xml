@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeActivity">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordina_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--Toolbar-->
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_scrollFlags="enterAlways|scroll">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_15dp"
+                    android:elevation="@dimen/_10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <!--Profile Image-->
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/profile_img"
+                        android:layout_width="@dimen/_40dp"
+                        android:layout_height="@dimen/_40dp"
+                        android:onClick="onClick"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/shimmer_bg_gery_rounded_shape_0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearance="@style/MyProfileImageShape" />
+
+                    <LinearLayout
+                        android:id="@+id/buttonsLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        app:layout_constraintBottom_toBottomOf="@+id/profile_img"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/profile_img">
+
+                        <!--Coin-->
+                        <LinearLayout
+                            android:id="@+id/wallet_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:onClick="onClick"
+                            android:padding="@dimen/_5dp">
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:layout_width="@dimen/_20dp"
+                                android:layout_height="@dimen/_25dp"
+                                android:src="@drawable/coin" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/coin_amount"
+                                style="@style/DynamicTextColorStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_5dp"
+                                android:fontFamily="@font/lato_bold"
+                                android:text="12.2K"
+                                android:textSize="@dimen/_14sp" />
+                        </LinearLayout>
+
+                        <!--Search-->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_search"
+                            style="@style/DynamicIconColorStyle"
+                            android:layout_width="@dimen/_35dp"
+                            android:layout_height="@dimen/_35dp"
+                            android:layout_marginStart="@dimen/_10dp"
+                            android:onClick="onClick"
+                            app:icon="@drawable/ic_search"
+                            app:iconGravity="textStart"
+                            app:iconSize="@dimen/_25dp" />
+
+                        <!--Notification-->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_notification"
+                            style="@style/DynamicIconColorStyle"
+                            android:layout_width="@dimen/_35dp"
+                            android:layout_height="@dimen/_35dp"
+                            android:onClick="onClick"
+                            app:icon="@drawable/ic_notification"
+                            app:iconGravity="textStart"
+                            app:iconSize="@dimen/_25dp" />
+                    </LinearLayout>
+
+                    <!--SearchView-->
+                    <SearchView
+                        android:id="@+id/searchView"
+                        style="@style/MySearchViewStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_40dp"
+                        android:layout_marginHorizontal="@dimen/_10dp"
+                        android:background="@drawable/bg_search"
+                        android:elevation="@dimen/_10dp"
+                        android:iconifiedByDefault="false"
+                        android:queryHint="@string/search"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/profile_img"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/profile_img"
+                        app:layout_constraintTop_toTopOf="@+id/profile_img" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!--Fragment Layout-->
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/home_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toTopOf="@+id/bottomLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <!--Bottom Navigation Layout-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottomLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@android:color/transparent"
+            android:elevation="@dimen/_10dp"
+            app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <include
+                android:id="@+id/bottomNavBar"
+                layout="@layout/custom_nav"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

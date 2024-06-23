@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="@dimen/_20dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--    view-->
+        <View
+            android:id="@+id/view2"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_3dp"
+            android:layout_marginTop="@dimen/_20dp"
+            android:background="@drawable/bg_dialog_view_divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--    Requestamount-->
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/materialTextView2"
+            style="@style/DynamicTextColorStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:fontFamily="@font/lato_bold"
+            android:gravity="center"
+            android:hint="@string/requested_amount"
+            android:maxLines="1"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view2" />
+
+        <!--    amount-->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/materialTextView3"
+            style="@style/DynamicTextColorStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5dp"
+            android:fontFamily="@font/lato_bold"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/_80"
+            android:textSize="@dimen/_30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialTextView2" />
+
+        <!--    upiid-->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/materialTextView4"
+            style="@style/DynamicTextColorStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20dp"
+            android:fontFamily="@font/lato_bold"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/enter_your_upi_id"
+            android:textSize="@dimen/_24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialTextView3" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/materialTextView5"
+            style="@style/DynamicTextColorStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15dp"
+            android:layout_marginTop="@dimen/_25dp"
+            android:fontFamily="@font/lato_bold"
+            android:text="@string/upi_id"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialTextView4" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_account_no"
+            style="@style/DynamicTextColorStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45dp"
+            android:layout_marginHorizontal="@dimen/_15dp"
+            android:layout_marginTop="@dimen/_5dp"
+            android:background="@drawable/wallet_money"
+            android:fontFamily="@font/lato_regular"
+            android:hint="@string/ex_mobilenumber_upi"
+            android:inputType="text"
+            android:paddingHorizontal="@dimen/_15dp"
+            android:textSize="@dimen/_16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialTextView5" />
+
+        <!--    proceed Button-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/proceed"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45dp"
+            android:layout_marginHorizontal="@dimen/_15dp"
+            android:layout_marginTop="@dimen/_30dp"
+            android:background="@drawable/bg_rounded_gradiant_color_button_50dp"
+            android:elevation="@dimen/_10dp"
+            android:fontFamily="@font/lato_bold"
+            android:text="@string/proceed"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_account_no" />
+
+        <View
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_3dp"
+            android:layout_marginTop="@dimen/_40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/proceed" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

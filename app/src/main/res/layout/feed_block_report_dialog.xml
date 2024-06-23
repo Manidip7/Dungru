@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="@dimen/_20dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_3dp"
+            android:layout_marginTop="@dimen/_20dp"
+            android:background="@drawable/bg_dialog_view_divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--Button View-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:id="@+id/buttonsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20dp"
+            android:layout_marginBottom="@dimen/_40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/btnBlockUser"
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableStart="@drawable/ic_block"
+                android:drawablePadding="@dimen/_10dp"
+                android:fontFamily="@font/lato_regular"
+                android:gravity="start"
+                android:paddingHorizontal="@dimen/_40dp"
+                android:paddingVertical="@dimen/_10dp"
+                android:text="@string/block_user"
+                android:textSize="@dimen/_20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/btnReportUser"
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:drawableStart="@drawable/ic_report"
+                android:drawablePadding="@dimen/_10dp"
+                android:fontFamily="@font/lato_regular"
+                android:gravity="start"
+                android:paddingHorizontal="@dimen/_40dp"
+                android:paddingVertical="@dimen/_10dp"
+                android:text="@string/report_user"
+                android:textSize="@dimen/_20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnBlockUser" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--confirmation layout-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:visibility="gone"
+            android:id="@+id/confirmationLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2">
+            <!--heading-->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_heading"
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15dp"
+                android:layout_marginTop="@dimen/_20dp"
+                android:fontFamily="@font/lato_bold"
+                android:gravity="center_horizontal"
+                android:text="Block Or Report User"
+                android:textSize="@dimen/_18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--Waring text-->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_waring"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_40dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/lato_regular"
+                android:gravity="center"
+                android:text="It someone is in immediate danger, call the \n local emergency services before reporting.\n Don't wait"
+                android:textColor="@color/hint_color_grey"
+                android:textSize="@dimen/_14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_heading" />
+
+            <!--reason-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/reasonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_waring">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txtSelectReason"
+                    style="@style/DynamicTextColorStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15dp"
+                    android:layout_marginTop="@dimen/_10dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Please Select a reason:"
+                    android:textSize="@dimen/_18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/reasonList"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:layout_marginHorizontal="@dimen/_20dp"
+                    android:layout_marginTop="@dimen/_5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtSelectReason"
+                    tools:listitem="@layout/report_user_item" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--Button Block-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/blockConfirmLayout"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="@dimen/_15dp"
+                android:layout_marginTop="@dimen/_20dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/reasonLayout">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnBlockConfirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_gradiant_color_button_50dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/block"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/blockProgress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_15dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"  />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!--Button Report-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/reportConfirmLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15dp"
+                android:layout_marginTop="@dimen/_5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/blockConfirmLayout">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnReportConfirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_gradiant_color_button_50dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="@string/report"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/reportProgress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancel"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginHorizontal="@dimen/_15dp"
+                android:layout_marginTop="@dimen/_5dp"
+                android:backgroundTint="@android:color/transparent"
+                android:fontFamily="@font/lato_bold"
+                android:text="@string/cancel"
+                android:textAllCaps="false"
+                android:layout_marginBottom="@dimen/_40dp"
+                android:textColor="@color/hint_color_grey"
+                android:textSize="@dimen/_20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/reportConfirmLayout"
+                app:strokeColor="@color/hint_color_grey"
+                app:strokeWidth="@dimen/_1dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

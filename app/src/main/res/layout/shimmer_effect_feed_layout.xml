@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/_5dp">
+        <!--Profile details-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgFeedProfile"
+                android:layout_width="@dimen/_35dp"
+                android:layout_height="@dimen/_35dp"
+                android:layout_marginStart="@dimen/_15dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_marginEnd="@dimen/_10dp"
+                android:layout_marginBottom="@dimen/_10dp"
+                android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearance="@style/MyProfileImageShape" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_10dp"
+                android:layout_marginEnd="@dimen/_20dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btn_follow"
+                app:layout_constraintStart_toEndOf="@+id/imgFeedProfile"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_16dp"
+                    android:background="@drawable/shimmer_bg_gery_rounded_shape_0dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_14dp"
+                    android:layout_marginTop="@dimen/_2dp"
+                    android:layout_marginEnd="@dimen/_100dp"
+                    android:background="@drawable/shimmer_bg_gery_rounded_shape_0dp" />
+            </LinearLayout>
+            <!--Follow Button-->
+
+            <View
+                android:id="@+id/btn_follow"
+                android:layout_width="@dimen/_80dp"
+                android:layout_height="@dimen/_30dp"
+                android:layout_marginEnd="@dimen/_15dp"
+                android:background="@drawable/shimmer_bg_gery_rounded_shape_16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_16dp"
+            android:layout_marginHorizontal="@dimen/_10dp"
+            android:background="@drawable/shimmer_bg_gery_rounded_shape_0dp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_16dp"
+            android:layout_marginTop="@dimen/_2dp"
+            android:layout_marginHorizontal="@dimen/_10dp"
+            android:background="@drawable/shimmer_bg_gery_rounded_shape_0dp" />
+        <View
+            android:id="@+id/img_content"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_400dp"
+            android:layout_marginHorizontal="@dimen/_15dp"
+            android:layout_marginBottom="@dimen/_10dp"
+            android:layout_marginTop="@dimen/_5dp"
+            android:maxWidth="@dimen/_300dp"
+            android:maxHeight="@dimen/_300dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/shimmer_bg_gery_rounded_shape_0dp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+
+        <!--Like, Comment, Share-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_25dp"
+            android:layout_marginHorizontal="@dimen/_15dp"
+            android:layout_marginBottom="@dimen/_10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <View
+                android:id="@+id/btn_like"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/shimmer_bg_gery_rounded_shape_4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <View
+                android:id="@+id/btn_comment"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5dp"
+                android:background="@drawable/shimmer_bg_gery_rounded_shape_4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_like"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <View
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5dp"
+                android:background="@drawable/shimmer_bg_gery_rounded_shape_4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_comment"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+
+            <View
+                android:layout_width="@dimen/_30dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/shimmer_bg_gery_rounded_shape_4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgFeedProfile1"
+            android:layout_width="@dimen/_35dp"
+            android:layout_height="@dimen/_35dp"
+            android:layout_marginStart="@dimen/_15dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:layout_marginBottom="@dimen/_10dp"
+            android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/MyProfileImageShape" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_10dp"
+            android:layout_marginEnd="@dimen/_20dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_follow1"
+            app:layout_constraintStart_toEndOf="@+id/imgFeedProfile1"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_16dp"
+                android:background="@drawable/shimmer_bg_gery_rounded_shape_0dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_14dp"
+                android:layout_marginTop="@dimen/_2dp"
+                android:layout_marginEnd="@dimen/_100dp"
+                android:background="@drawable/shimmer_bg_gery_rounded_shape_0dp" />
+        </LinearLayout>
+        <!--Follow Button-->
+
+        <View
+            android:id="@+id/btn_follow1"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_30dp"
+            android:layout_marginEnd="@dimen/_15dp"
+            android:background="@drawable/shimmer_bg_gery_rounded_shape_16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_16dp"
+        android:layout_marginHorizontal="@dimen/_10dp"
+        android:background="@drawable/shimmer_bg_gery_rounded_shape_0dp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_2dp"
+        android:layout_marginHorizontal="@dimen/_10dp"
+        android:background="@drawable/shimmer_bg_gery_rounded_shape_0dp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_500dp"
+        android:layout_marginHorizontal="@dimen/_15dp"
+        android:layout_marginBottom="@dimen/_10dp"
+        android:layout_marginTop="@dimen/_5dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/shimmer_bg_gery_rounded_shape_0dp" />
+</LinearLayout>

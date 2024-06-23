@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_2dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            app:shapeAppearance="@style/MyProfileImageShape"
+            android:layout_width="@dimen/_35dp"
+            android:layout_height="@dimen/_35dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/_5dp"
+            android:src="@drawable/shimmer_bg_gery_rounded_shape_0dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="@dimen/_5dp"
+            android:layout_gravity="center_vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_14dp"
+                android:layout_marginEnd="@dimen/_200dp"
+                android:background="@drawable/shimmer_bg_gery_rounded_shape_4dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_14dp"
+                android:layout_marginTop="@dimen/_5dp"
+                android:background="@drawable/shimmer_bg_gery_rounded_shape_4dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

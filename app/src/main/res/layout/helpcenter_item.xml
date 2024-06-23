@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/layout_all"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/_8dp"
+    android:paddingEnd="@dimen/_8dp"
+    android:paddingTop="@dimen/_8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <com.google.android.material.textview.MaterialTextView
+        style="@style/DynamicTextColorStyle"
+        android:fontFamily="@font/lato_bold"
+        android:id="@+id/questionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_18sp"
+        android:gravity="start"
+        android:textStyle="bold"
+        android:layout_marginEnd="@dimen/_30dp"
+        android:layout_marginTop="@dimen/_8dp"
+        android:layout_marginBottom="@dimen/_8dp"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:fontFamily="@font/lato_regular"
+        android:id="@+id/answerTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/search_border_color_grey"
+        android:layout_below="@id/questionTextView"
+        android:layout_margin="@dimen/_8dp"
+        android:visibility="gone"/>
+    <ImageView
+        android:id="@+id/dropdownIcon"
+        android:layout_width="@dimen/_15dp"
+        android:layout_height="@dimen/_10dp"
+        android:layout_alignTop="@id/questionTextView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_drop_down_arrow"
+        android:contentDescription="@string/dropdown_icon_description"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:id="@+id/view_grey_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/view_grey_color"/>
+    </LinearLayout>
+</LinearLayout>

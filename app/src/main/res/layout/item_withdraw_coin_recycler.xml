@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_100dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5dp"
+    app:cardCornerRadius="@dimen/_5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingVertical="5dp">
+
+        <LinearLayout
+            android:id="@+id/ll_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_15dp"
+                android:layout_height="@dimen/_15dp"
+                android:src="@drawable/coin" />
+
+            <TextView
+                android:id="@+id/coinCountTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_3dp"
+                android:fontFamily="@font/lato_regular"
+                android:text="100"
+                android:textColor="@color/hint_color_grey"
+                android:textSize="@dimen/_14sp" />
+
+        </LinearLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/amountTv"
+            style="@style/DynamicTextColorStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_top"
+            android:fontFamily="@font/lato_bold"
+            android:text="₹ 180"
+            android:textAlignment="center"
+            android:textSize="@dimen/_16sp" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.checkbox.MaterialCheckBox xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/btn_report_user"
+    style="@style/DynamicTextColorStyle"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_40dp"
+    android:background="@android:color/transparent"
+    android:button="@null"
+    android:drawablePadding="@dimen/_20dp"
+    android:fontFamily="@font/lato_regular"
+    android:paddingStart="@dimen/_20dp"
+    android:text="All"
+    android:textSize="16sp"
+    app:buttonIcon="@drawable/ic_radio_button_selector"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+

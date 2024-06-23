@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="pink">#FF3293</color>
+    <color name="pink_light">#FFC7DB</color>
+    <color name="purple">#D63FBC</color>
+    <color name="text_color_blue">#2670FF</color>
+    <color name="text_color_grey">#565656</color>
+    <color name="hint_color_grey">#9F9F9F</color>
+    <color name="action_color">#EA0054</color>
+    <color name="hover_color">#4DEE3678</color>
+    <color name="otp_box_color">#FFDFEA</color>
+    <color name="button_back_bg_grey_color">#A3A3A3</color>
+    <color name="search_border_color_grey">#DEDEDE</color>
+    <color name="bg_back_btn_color">#409F9F9F</color>
+    <color name="green">#00C508</color>
+    <color name="view_grey_color">#4D9F9F9F</color>
+    <color name="floating_btn_bg_dark">#B3000000</color>
+    <color name="white_op50">#80FFFFFF</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="new_pink">#DF3AA5</color>
+    <color name="grey_pop">#F0F0F0</color>
+    <color name="bg_black_op_20">#1A000000</color>
+    <color name="nav_bar_dark_color">#2B3339</color>
+    <color name="black_bg_dynamic_neutral_variant_10">#161C20</color>
+    <color name="white_bg_dynamic_neutral_variant_99">#F9FCFF</color>
+</resources>

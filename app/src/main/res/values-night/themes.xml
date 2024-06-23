@@ -1,0 +1,93 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Dungru" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/action_color</item>
+        <item name="colorPrimaryVariant">@color/pink</item>
+        <item name="colorOnPrimary">@color/action_color</item>
+        <item name="android:windowBackground">@color/black_bg_dynamic_neutral_variant_10</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/action_color</item>
+        <item name="colorSecondaryVariant">@color/pink</item>
+        <item name="colorOnSecondary">@color/action_color</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/black_bg_dynamic_neutral_variant_10</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!--EditText-->
+    <style name="MyEditTextStyle" parent="ThemeOverlay.Material3.TextInputEditText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/hint_color_grey</item>
+        <item name="fontFamily">@font/lato_regular</item>
+    </style>
+
+    <!--For text color theme based-->
+    <style name="DynamicTextColorStyle" parent="Theme.AppCompat.DayNight">
+        <item name="android:textColor">@color/white</item>
+        <!-- Add other theme attributes as needed -->
+    </style>
+
+    <!--For icon color theme based-->
+    <style name="DynamicIconColorStyle" parent="Widget.Material3.Button.TextButton">
+        <item name="android:insetLeft">4dp</item>
+        <item name="android:insetRight">4dp</item>
+        <item name="iconPadding">@dimen/_0dp</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Material3.Button.IconButton</item>
+        <item name="iconTint">@color/white</item>
+    </style>
+
+    <!--Circle Profile-->
+    <style name="MyProfileImageShape" parent="ShapeAppearance.MaterialComponents">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+    <!--For choice chip-->
+    <style name="MyChoiceChipStyle" parent="Widget.MaterialComponents.Chip.Choice">
+        <!-- Chip background color selector -->
+        <item name="chipBackgroundColor">@color/choice_chip_background_color</item>
+        <!-- Chip text color selector -->
+        <item name="android:textColor">@color/choice_chip_text_color</item>
+        <!-- Chip icon color selector -->
+        <item name="chipIconTint">@color/choice_chip_text_color</item>
+    </style>
+
+    <!--My searchView-->
+    <style name="MySearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="android:textColor">@color/white</item>
+        <item name="defaultQueryHint">@string/search</item>
+        <item name="android:textColorHint">@color/text_color_grey</item>
+        <item name="android:background">@drawable/bg_search</item>
+        <item name="android:queryBackground">@android:color/transparent</item>
+    </style>
+
+    <!--Tab layout style-->
+    <style name="MyTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorHeight">2dp</item>
+        <item name="tabIndicatorFullWidth">true</item>
+        <item name="tabTextAppearance">@style/MyCustomTextAppearance</item>
+    </style>
+
+    <style name="MyCustomTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <!--Custom Full screen Dialog-->
+    <style name="FullScreenDialogTheme" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:statusBarColor">@color/material_dynamic_neutral_variant10</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <!-- Add your customizations here -->
+        <item name="android:windowBackground">@color/material_dynamic_neutral_variant10</item>
+        <item name="android:windowAnimationStyle">@style/DialogPopCenterAnimation</item>
+    </style>
+
+    <style name="DialogPopCenterAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/scale_up_enter</item>
+    </style>
+
+    <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+</resources>

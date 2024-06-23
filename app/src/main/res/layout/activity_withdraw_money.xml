@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    tools:context=".ui.wallet.WithdrawMoneyActivity">
+    <!--Toolbar-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60dp"
+        android:elevation="@dimen/_15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--Back Button-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBack"
+            style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+            android:layout_width="@dimen/_40dp"
+            android:layout_height="@dimen/_40dp"
+            android:layout_marginHorizontal="@dimen/_10dp"
+            android:backgroundTint="@color/bg_back_btn_color"
+            android:onClick="onClick"
+            app:icon="@drawable/arrow_back"
+            app:iconSize="@dimen/_20dp"
+            app:iconTint="@color/pink"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--User Id-->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_user_name"
+            style="@style/DynamicTextColorStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10dp"
+            android:fontFamily="@font/lato_bold"
+            android:maxLines="1"
+            android:text="@string/withdraw_money"
+            android:textSize="@dimen/_18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/et_amount"
+        style="@style/MyEditTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50dp"
+        android:layout_marginHorizontal="@dimen/_15dp"
+        android:layout_marginTop="@dimen/_25dp"
+        android:background="@drawable/bg_search"
+        android:elevation="@dimen/_10dp"
+        android:hint="@string/enter_amount1"
+        android:inputType="number"
+        android:maxLength="5"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/_15dp"
+        android:textSize="@dimen/_18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/walletCoinRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_amount"
+        tools:listitem="@layout/item_withdraw_coin_recycler" />
+
+    <!--Methods View-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/paymentMethodsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/walletCoinRecycler">
+        <!--Bank Options-->
+        <LinearLayout
+            android:id="@+id/bankListLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10dp"
+                android:fontFamily="@font/lato_bold"
+                android:maxLines="1"
+                android:text="@string/select_your_bank_account"
+                android:textSize="@dimen/_14sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerBankBtnView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/item_withdraw_bank_btn_recycler" />
+        </LinearLayout>
+
+        <!--First time bank option-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnBankFirstTime"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60dp"
+            android:layout_marginHorizontal="@dimen/_15dp"
+            android:layout_marginTop="@dimen/_20dp"
+            android:onClick="onClick"
+            app:cardCornerRadius="@dimen/_10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bankListLayout">
+            <!--Bank card-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_selector_and_hover_effect">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imgbank"
+                    android:layout_width="@dimen/_40dp"
+                    android:layout_height="@dimen/_40dp"
+                    android:layout_margin="@dimen/_10dp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_10dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_bank"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearance="@style/MyProfileImageShape" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/DynamicTextColorStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:maxLines="1"
+                    android:text="@string/Bank_Transfer"
+                    android:textSize="@dimen/_18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imgbank"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!--upi card-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnUpi"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60dp"
+            android:layout_marginHorizontal="@dimen/_15dp"
+            android:layout_marginVertical="@dimen/_15dp"
+            android:onClick="onClick"
+            app:cardCornerRadius="@dimen/_10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnBankFirstTime">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_selector_and_hover_effect">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/upi_image"
+                    android:layout_width="@dimen/_40dp"
+                    android:layout_height="@dimen/_40dp"
+                    android:layout_margin="@dimen/_10dp"
+                    android:background="@color/white"
+                    android:elevation="@dimen/_10dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_upi"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearance="@style/MyProfileImageShape" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView8"
+                    style="@style/DynamicTextColorStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10dp"
+                    android:fontFamily="@font/lato_bold"
+                    android:maxLines="1"
+                    android:text="@string/Upi_Transfer"
+                    android:textSize="@dimen/_18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/upi_image"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--Add_Bank_Account-->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAddBankAcc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_rounded_blue_stroke_shape_30dp"
+        android:elevation="@dimen/_10dp"
+        android:fontFamily="@font/lato_bold"
+        android:onClick="onClick"
+        android:text="@string/add_account"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/text_color_blue"
+        android:textSize="@dimen/_20sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentMethodsLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

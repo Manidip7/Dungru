@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/_15dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profileLayout"
+        android:layout_width="@dimen/_40dp"
+        android:layout_height="@dimen/_40dp"
+        android:layout_marginVertical="@dimen/_10dp"
+        android:padding="@dimen/_2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--Profile Image-->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_search_profile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/demo_feed_img"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/MyProfileImageShape" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="@dimen/_10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/profileLayout"
+        app:layout_constraintEnd_toStartOf="@+id/imgClose"
+        app:layout_constraintStart_toEndOf="@+id/profileLayout"
+        app:layout_constraintTop_toTopOf="@+id/profileLayout">
+        <!--Chat Name-->
+        <TextView
+            android:id="@+id/txt_serach_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:maxLines="1"
+            android:text="Name"
+            style="@style/DynamicTextColorStyle"
+            app:layout_constraintEnd_toStartOf="@+id/txt_chat_time"
+            app:layout_constraintStart_toEndOf="@+id/profileLayout"
+            app:layout_constraintTop_toTopOf="@+id/profileLayout" />
+    </LinearLayout>
+    <!--Cross Image-->
+
+    <!--Divider-->
+    <ImageView
+        android:id="@+id/imgClose"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/close"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1dp"
+        android:layout_marginTop="@dimen/_10dp"
+        android:background="@color/hint_color_grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

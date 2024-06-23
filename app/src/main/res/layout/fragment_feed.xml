@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeToRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.homefragments.FeedFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:shimmer_auto_start="true">
+            <include layout="@layout/shimmer_effect_feed_layout" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/feedRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            tools:listitem="@layout/item_feed_recycler" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_gallery_picker"
+            style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+            android:layout_width="@dimen/_60dp"
+            android:layout_height="@dimen/_60dp"
+            android:backgroundTint="#CFCFCF"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onClick"
+            android:visibility="invisible"
+            app:icon="@drawable/ic_add_photo"
+            app:iconGravity="textStart"
+            app:iconSize="@dimen/_20dp"
+            app:iconTint="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/btn_camera_picker"
+            app:layout_constraintEnd_toEndOf="@+id/btn_camera_picker"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+            android:id="@+id/btn_camera_picker"
+            android:layout_width="@dimen/_60dp"
+            android:layout_height="@dimen/_60dp"
+            android:onClick="onClick"
+            android:backgroundTint="#CFCFCF"
+            app:icon="@drawable/ic_add_camera_photo"
+            app:iconGravity="textStart"
+            app:iconSize="@dimen/_20dp"
+            android:visibility="invisible"
+            app:iconTint="@color/black"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintVertical_bias="1"
+            app:layout_constraintBottom_toTopOf="@+id/btn_add_post"
+            app:layout_constraintEnd_toEndOf="@+id/btn_add_post"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_add_post"
+            style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+            android:layout_width="@dimen/_55dp"
+            android:layout_height="@dimen/_55dp"
+            android:elevation="@dimen/_20dp"
+            android:onClick="onClick"
+            app:backgroundTint="@color/floating_btn_bg_dark"
+            app:icon="@drawable/ic_add"
+            app:iconGravity="textStart"
+            app:iconSize="@dimen/_20dp"
+            app:iconTint="@color/pink"
+            app:layout_constraintBottom_toBottomOf="@+id/feedRecycler"
+            app:layout_constraintEnd_toEndOf="@+id/feedRecycler"
+            app:layout_constraintHorizontal_bias="1"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:layout_marginBottom="@dimen/_15dp"
+            app:layout_constraintStart_toStartOf="@+id/feedRecycler"
+            app:layout_constraintTop_toTopOf="@+id/feedRecycler"
+            app:layout_constraintVertical_bias="1" />
+        <!--Empty View-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/noDataView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/feedRecycler">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/shapeableImageView7"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_300dp"
+                android:src="@drawable/no_post_view"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_bold"
+                android:gravity="center_horizontal"
+                android:text="@string/oops_it_s_empty_here"
+                android:textSize="@dimen/_16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/shapeableImageView7"
+                app:layout_constraintVertical_bias="0.9" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

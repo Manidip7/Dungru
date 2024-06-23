@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.payment.PaymentSettingActivity">
+    <!--ToolBar-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60dp"
+        android:elevation="@dimen/_15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--Back Button-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBack"
+            style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+            android:layout_width="@dimen/_40dp"
+            android:layout_height="@dimen/_40dp"
+            android:layout_marginHorizontal="@dimen/_10dp"
+            android:backgroundTint="@color/bg_back_btn_color"
+            android:onClick="onClick"
+            app:icon="@drawable/arrow_back"
+            app:iconSize="@dimen/_20dp"
+            app:iconTint="@color/pink"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--Title-->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_title"
+            style="@style/DynamicTextColorStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10dp"
+            android:fontFamily="@font/lato_bold"
+            android:maxLines="1"
+            android:text="@string/payment_options"
+            android:textSize="@dimen/_18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/view_grey_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtCardSetting"
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:fontFamily="@font/lato_bold"
+                android:text="@string/payment_card_setting"
+                android:textSize="@dimen/_16sp" />
+
+            <TextView
+                android:id="@+id/noCardFound"
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10dp"
+                android:textSize="@dimen/_14sp"
+                android:visibility="gone"
+                android:fontFamily="@font/lato_regular"
+                android:text="@string/no_card_found"
+                android:gravity="center"/>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_5dp" />
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_gravity="center"
+                android:backgroundTint="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30dp"
+                app:tabBackground="@drawable/tab_selector"
+                app:tabGravity="center"
+                app:tabPadding="@dimen/_5dp"
+                app:tabIndicatorAnimationMode="elastic"
+                app:tabIndicatorHeight="0dp"/>
+
+            <!--Add Card Button-->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_Add_Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:background="@drawable/bg_rounded_blue_stroke_shape_30dp"
+                android:elevation="@dimen/_10dp"
+                android:fontFamily="@font/lato_bold"
+                android:onClick="onClick"
+                android:text="@string/add_card"
+                android:textAllCaps="false"
+                android:textColor="@color/text_color_blue"
+                android:textSize="@dimen/_20sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtWithDrawBankSetting"
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15dp"
+                android:layout_marginTop="@dimen/_15dp"
+                android:fontFamily="@font/lato_bold"
+                android:text="@string/withdraw_bank_setting"
+                android:textSize="@dimen/_16sp" />
+            <TextView
+                android:id="@+id/noBankFound"
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_14sp"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/_10dp"
+                android:fontFamily="@font/lato_regular"
+                android:text="@string/no_bank_found"
+                android:gravity="center"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/bankRecycler"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/bank_setting_item"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+            <!--Add Card Button-->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_Add_Bank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_marginBottom="@dimen/_30dp"
+                android:background="@drawable/bg_rounded_blue_stroke_shape_30dp"
+                android:elevation="@dimen/_10dp"
+                android:fontFamily="@font/lato_bold"
+                android:onClick="onClick"
+                android:text="@string/add_bank_details"
+                android:textAllCaps="false"
+                android:textColor="@color/text_color_blue"
+                android:textSize="@dimen/_20sp" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

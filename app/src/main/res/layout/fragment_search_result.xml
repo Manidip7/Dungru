@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    tools:context=".ui.search.SearchActivity">
+    <HorizontalScrollView
+        android:id="@+id/categoryLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/select_one_chip_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search_et"
+            app:singleLine="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/btn_popular"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_55dp"
+                android:layout_marginStart="@dimen/_15dp"
+                android:checked="true"
+                android:text="@string/popular"
+                app:chipBackgroundColor="@android:color/transparent"
+                app:chipCornerRadius="@dimen/_15dp"
+                app:chipEndPadding="@dimen/_10dp"
+                app:chipStartPadding="@dimen/_10dp"
+                app:chipStrokeWidth="@dimen/_0dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/btn_nearby"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_55dp"
+                android:text="@string/nearby"
+                app:chipBackgroundColor="@android:color/transparent"
+                app:chipCornerRadius="@dimen/_15dp"
+                app:chipEndPadding="@dimen/_10dp"
+                app:chipStartPadding="@dimen/_10dp"
+                app:chipStrokeWidth="@dimen/_0dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/btn_new"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_55dp"
+                android:text="@string/new_str"
+                app:chipBackgroundColor="@android:color/transparent"
+                app:chipCornerRadius="@dimen/_15dp"
+                app:chipEndPadding="@dimen/_10dp"
+                app:chipStartPadding="@dimen/_10dp"
+                app:chipStrokeWidth="@dimen/_0dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/btn_folowing"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_55dp"
+                android:layout_marginEnd="@dimen/_15dp"
+                android:text="@string/following"
+                app:chipBackgroundColor="@android:color/transparent"
+                app:chipCornerRadius="@dimen/_15dp"
+                app:chipEndPadding="@dimen/_10dp"
+                app:chipStartPadding="@dimen/_10dp"
+                app:chipStrokeWidth="0dp" />
+        </com.google.android.material.chip.ChipGroup>
+
+    </HorizontalScrollView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_result_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryLayout"
+        tools:listitem="@layout/item_search_recycler"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

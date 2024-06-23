@@ -1,0 +1,98 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:id="@+id/itemLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_55dp"
+        android:orientation="horizontal"
+        android:elevation="@dimen/_5dp"
+        android:background="@drawable/bg_rounded_text_white_color"
+        android:weightSum="5"
+        android:layout_marginHorizontal="@dimen/_8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/itemGoLive">
+
+        <!--Live-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/itemLive"
+            style="@style/DynamicIconColorStyle"
+            android:layout_width="0dp"
+            android:layout_marginVertical="@dimen/_2dp"
+            android:layout_marginStart="@dimen/_2dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            app:icon="@drawable/ic_live"
+            app:iconGravity="textStart"
+            app:iconSize="@dimen/_30dp" />
+
+        <!--Feed-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/itemFeed"
+            style="@style/DynamicIconColorStyle"
+            android:layout_width="0dp"
+            android:layout_margin="@dimen/_2dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            app:icon="@drawable/ic_feed"
+            app:iconGravity="textStart"
+            app:iconSize="@dimen/_25dp" />
+
+        <!--Empty view-->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <!--Chat-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/itemChat"
+            style="@style/DynamicIconColorStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/_2dp"
+            android:onClick="onClick"
+            app:icon="@drawable/ic_chat"
+            app:iconGravity="textStart"
+            app:iconSize="@dimen/_30dp" />
+
+        <!--Setting-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/itemSetting"
+            style="@style/DynamicIconColorStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginVertical="@dimen/_2dp"
+            android:layout_marginEnd="@dimen/_2dp"
+            android:onClick="onClick"
+            app:icon="@drawable/ic_nav_setting"
+            app:iconGravity="textStart"
+            app:iconSize="@dimen/_30dp" />
+    </LinearLayout>
+    <!--GoLive-->
+    <ImageView
+        android:id="@+id/itemGoLive"
+        android:layout_width="@dimen/_80dp"
+        android:layout_height="@dimen/_80dp"
+        android:onClick="onClick"
+        android:elevation="@dimen/_5dp"
+        android:scaleType="center"
+        android:layout_marginVertical="@dimen/_5dp"
+        android:background="@drawable/bg_rounded_live_btn_light"
+        android:src="@drawable/ic_go_live"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

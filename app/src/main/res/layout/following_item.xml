@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_10dp">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="@dimen/_50dp"
+        android:layout_height="@dimen/_50dp"
+        app:cardCornerRadius="@dimen/_50dp"
+        app:cardElevation="0dp"
+        android:layout_marginStart="@dimen/_15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+<!--        user Image btn-->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_following_user"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_image_followers" />
+    </androidx.cardview.widget.CardView>
+
+
+<!--    following user name-->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/txt_following_user"
+        style="@style/DynamicTextColorStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_bold"
+        android:text="Happy Hub"
+        android:layout_marginStart="@dimen/_10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--unfollow btn-->
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_weight="1"
+        android:id="@+id/btn_unfollow"
+        style="@style/DynamicTextColorStyle"
+        android:layout_width="@dimen/_100dp"
+        android:layout_height="@dimen/_30dp"
+        android:background="@drawable/bg_follow_button"
+        android:fontFamily="@font/lato_regular"
+        android:layout_marginEnd="@dimen/_15dp"
+        android:layout_marginStart="@dimen/_5dp"
+        android:gravity="center"
+        android:textColor="@color/pink"
+        android:text="@string/unfollow"
+        android:textSize="@dimen/_14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="@dimen/_0dp"
+        android:visibility="gone"
+        android:progressTint="@color/action_color"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_unfollow"
+        app:layout_constraintEnd_toEndOf="@+id/btn_unfollow"
+        app:layout_constraintStart_toStartOf="@+id/btn_unfollow"
+        app:layout_constraintTop_toTopOf="@+id/btn_unfollow" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

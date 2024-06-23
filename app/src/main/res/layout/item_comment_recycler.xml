@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_2dp"
+    android:orientation="horizontal">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imgUserProfile"
+        android:layout_width="@dimen/_35dp"
+        android:layout_height="@dimen/_35dp"
+        android:layout_gravity="top"
+        android:layout_margin="@dimen/_5dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/user_placeholder"
+        app:shapeAppearance="@style/MyProfileImageShape" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/_5dp">
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtUserName"
+            style="@style/DynamicTextColorStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="User name"
+            android:fontFamily="@font/lato_bold"
+            android:textSize="@dimen/_14sp" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtComment"
+            style="@style/DynamicTextColorStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Comments"
+            android:layout_marginTop="@dimen/_2dp"
+            android:fontFamily="@font/lato_regular"
+            android:textSize="@dimen/_12sp" />
+    </LinearLayout>
+
+
+</LinearLayout>

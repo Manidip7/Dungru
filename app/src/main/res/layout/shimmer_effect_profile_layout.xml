@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="@dimen/_100dp"
+            android:layout_height="@dimen/_100dp"
+            android:layout_marginTop="@dimen/_15dp"
+            android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp"
+            app:shapeAppearance="@style/MyProfileImageShape" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="@dimen/_200dp"
+            android:layout_height="@dimen/_25dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="@dimen/_100dp"
+            android:layout_height="@dimen/_20dp"
+            android:layout_marginTop="@dimen/_3dp"
+            android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_15dp">
+            <!--Wallet-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:orientation="vertical">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="@dimen/_50dp"
+                    android:layout_height="@dimen/_20dp"
+                    android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="@dimen/_50dp"
+                    android:layout_height="@dimen/_15dp"
+                    android:layout_marginTop="@dimen/_5dp"
+                    android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp" />
+            </LinearLayout>
+            <!--Follower-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:orientation="vertical">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="@dimen/_50dp"
+                    android:layout_height="@dimen/_20dp"
+                    android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="@dimen/_50dp"
+                    android:layout_height="@dimen/_15dp"
+                    android:layout_marginTop="@dimen/_5dp"
+                    android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp" />
+            </LinearLayout>
+            <!--Following-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:orientation="vertical">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="@dimen/_50dp"
+                    android:layout_height="@dimen/_20dp"
+                    android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="@dimen/_50dp"
+                    android:layout_height="@dimen/_15dp"
+                    android:layout_marginTop="@dimen/_5dp"
+                    android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_20dp"
+            android:weightSum="4">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="@dimen/_30dp"
+                android:layout_height="@dimen/_30dp"
+                android:layout_margin="@dimen/_10dp"
+                android:layout_weight="1"
+                android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="@dimen/_30dp"
+                android:layout_height="@dimen/_30dp"
+                android:layout_margin="@dimen/_10dp"
+                android:layout_weight="1"
+                android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="@dimen/_30dp"
+                android:layout_height="@dimen/_30dp"
+                android:layout_margin="@dimen/_10dp"
+                android:layout_weight="1"
+                android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="@dimen/_30dp"
+                android:layout_height="@dimen/_30dp"
+                android:layout_margin="@dimen/_10dp"
+                android:layout_weight="1"
+                android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10dp"
+            android:paddingHorizontal="@dimen/_5dp"
+            android:weightSum="3">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="@dimen/_30dp"
+                android:layout_height="@dimen/_150dp"
+                android:layout_margin="@dimen/_5dp"
+                android:layout_weight="1"
+                android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="@dimen/_30dp"
+                android:layout_height="@dimen/_150dp"
+                android:layout_margin="@dimen/_5dp"
+                android:layout_weight="1"
+                android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="@dimen/_30dp"
+                android:layout_height="@dimen/_150dp"
+                android:layout_margin="@dimen/_5dp"
+                android:layout_weight="1"
+                android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_5dp"
+            android:weightSum="3">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="@dimen/_30dp"
+                android:layout_height="@dimen/_150dp"
+                android:layout_margin="@dimen/_5dp"
+                android:layout_weight="1"
+                android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="@dimen/_30dp"
+                android:layout_height="@dimen/_150dp"
+                android:layout_margin="@dimen/_5dp"
+                android:layout_weight="1"
+                android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="@dimen/_30dp"
+                android:layout_height="@dimen/_150dp"
+                android:layout_margin="@dimen/_5dp"
+                android:layout_weight="1"
+                android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/_5dp"
+            android:weightSum="3">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="@dimen/_30dp"
+                android:layout_height="@dimen/_150dp"
+                android:layout_margin="@dimen/_5dp"
+                android:layout_weight="1"
+                android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="@dimen/_30dp"
+                android:layout_height="@dimen/_150dp"
+                android:layout_margin="@dimen/_5dp"
+                android:layout_weight="1"
+                android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="@dimen/_30dp"
+                android:layout_height="@dimen/_150dp"
+                android:layout_margin="@dimen/_5dp"
+                android:layout_weight="1"
+                android:src="@drawable/shimmer_bg_gery_rounded_shape_8dp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.splash.Splash">
+
+    <ImageView
+        android:id="@+id/imageAppName"
+        android:layout_width="@dimen/_187dp"
+        android:layout_height="@dimen/_76dp"
+        android:src="@drawable/img_app_name"
+        android:layout_marginTop="-150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <FrameLayout
+        android:id="@+id/bottomView"
+        android:layout_width="match_parent"
+        android:layout_height="448dp"
+        android:layout_gravity="bottom|start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/splashOpacityLight"
+            android:layout_width="match_parent"
+            android:layout_height="448dp"
+            android:layout_gravity="start"
+            android:scaleType="fitXY"
+            android:src="@drawable/splash_img_opacity_lighter" />
+
+        <ImageView
+            android:id="@+id/splashOpacityDark"
+            android:layout_width="match_parent"
+            android:layout_height="423dp"
+            android:layout_gravity="bottom|start"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/splash_img_opacity_dark" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

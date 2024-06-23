@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeToRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.homefragments.LiveFragment">
+
+    <SearchView
+        android:visibility="gone"
+        android:id="@+id/searchView"
+        style="@style/MySearchViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_40dp"
+        android:layout_marginHorizontal="@dimen/_10dp"
+        android:layout_marginTop="@dimen/_10dp"
+        android:background="@drawable/bg_search"
+        android:elevation="@dimen/_10dp"
+        android:iconifiedByDefault="false"
+        android:queryHint="@string/search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/profile_img"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </SearchView>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:visibility="gone"
+        android:id="@+id/profile_img"
+        android:layout_width="@dimen/_40dp"
+        android:layout_height="@dimen/_40dp"
+        android:layout_marginStart="@dimen/_10dp"
+        android:onClick="onClick"
+        android:scaleType="fitXY"
+        android:layout_marginTop="@dimen/_10dp"
+        android:src="@drawable/demo_profile_img"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearance="@style/MyProfileImageShape" />
+
+    <!--Chat item recycler-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_chat_recycler"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    &lt;!&ndash;Toolbar&ndash;&gt;-->
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--        android:id="@+id/toolBar"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@color/material_dynamic_neutral_variant99"-->
+    <!--        android:elevation="@dimen/_10dp"-->
+    <!--        android:visibility="gone"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
+    <!--        &lt;!&ndash;Profile Image&ndash;&gt;-->
+    <!--        <com.google.android.material.imageview.ShapeableImageView-->
+    <!--            android:id="@+id/profile_img"-->
+    <!--            android:layout_width="@dimen/_40dp"-->
+    <!--            android:layout_height="@dimen/_40dp"-->
+    <!--            android:scaleType="fitXY"-->
+    <!--            android:layout_margin="@dimen/_10dp"-->
+    <!--            android:src="@drawable/demo_profile_img"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent"-->
+    <!--            app:shapeAppearance="@style/MyProfileImageShape" />-->
+
+    <!--        &lt;!&ndash;SearchView&ndash;&gt;-->
+    <!--        <SearchView-->
+    <!--            style="@style/MySearchViewStyle"-->
+    <!--            android:id="@+id/searchView"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:elevation="@dimen/_10dp"-->
+    <!--            android:queryHint="@string/search"-->
+    <!--            android:layout_height="@dimen/_40dp"-->
+    <!--            android:iconifiedByDefault="false"-->
+    <!--            android:layout_marginHorizontal="@dimen/_10dp"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            android:background="@drawable/search_bg"-->
+    <!--            app:layout_constraintStart_toEndOf="@+id/profile_img"-->
+    <!--            app:layout_constraintTop_toTopOf="parent" />-->
+    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+

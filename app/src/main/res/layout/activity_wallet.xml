@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.wallet.WalletActivity">
+
+    <!--Toolbar-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60dp"
+        android:elevation="@dimen/_15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--Back Button-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBack"
+            style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+            android:layout_width="@dimen/_40dp"
+            android:layout_height="@dimen/_40dp"
+            android:layout_marginHorizontal="@dimen/_10dp"
+            android:backgroundTint="@color/bg_back_btn_color"
+            android:onClick="onClick"
+            app:icon="@drawable/arrow_back"
+            app:iconSize="@dimen/_20dp"
+            app:iconTint="@color/pink"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--Title-->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_title"
+            style="@style/DynamicTextColorStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10dp"
+            android:fontFamily="@font/lato_bold"
+            android:maxLines="1"
+            android:text="@string/wallet"
+            android:textSize="@dimen/_18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnBack"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--Wallet body-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/walletCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15dp"
+        android:layout_marginTop="@dimen/_10dp"
+        app:cardCornerRadius="@dimen/_10dp"
+        app:cardElevation="@dimen/_5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_15dp"
+            android:background="@android:color/transparent">
+
+            <!--heading-->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_card_heading"
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10dp"
+                android:fontFamily="@font/lato_bold"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="Hey Happy hub!"
+                android:textSize="@dimen/_20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--desc-->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_card_decs"
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:fontFamily="@font/lato_regular"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="Hey Happy hub!"
+                android:textSize="@dimen/_14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_card_heading" />
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/coinIndicator"
+                android:layout_width="@dimen/_200dp"
+                android:layout_height="@dimen/_200dp"
+                android:layout_margin="@dimen/_10dp"
+                android:progress="15"
+                app:indicatorColor="@color/pink"
+                app:indicatorDirectionCircular="clockwise"
+                app:indicatorSize="@dimen/_95dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_card_decs"
+                app:trackColor="@color/pink_light"
+                app:trackCornerRadius="@dimen/_5dp"
+                app:trackThickness="@dimen/_10dp" />
+
+            <!--Rupees balance-->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_Inr_balance"
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="@dimen/_10dp"
+                android:fontFamily="@font/lato_bold"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="₹ 1200"
+                android:textSize="@dimen/_18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/coinIndicator"
+                app:layout_constraintEnd_toEndOf="@+id/coinIndicator"
+                app:layout_constraintStart_toStartOf="@+id/coinIndicator"
+                app:layout_constraintTop_toTopOf="@+id/coinIndicator" />
+
+            <!--coin balance-->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_coin_balance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:fontFamily="@font/lato_regular"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="Current Coin: 1200"
+                android:textColor="@color/hint_color_grey"
+                android:textSize="@dimen/_14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/coinIndicator" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--Buttons-->
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/walletCard">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnGetCoin"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="@dimen/_15dp"
+            android:layout_marginEnd="@dimen/_5dp"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            app:cardCornerRadius="@dimen/_10dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/lato_bold"
+                android:gravity="center"
+                android:background="@drawable/background_selector_and_hover_effect"
+                android:text="@string/get_coins"
+                android:textColor="@color/pink"
+                android:textSize="@dimen/_18sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnWithdrawMoney"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="@dimen/_5dp"
+            android:layout_marginEnd="@dimen/_15dp"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            app:cardCornerRadius="@dimen/_10dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/lato_bold"
+                android:gravity="center"
+                android:background="@drawable/background_selector_and_hover_effect"
+                android:text="@string/withdraw_money"
+                android:textColor="@color/pink"
+                android:textSize="@dimen/_18sp" />
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <!--transactions-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonsLayout"
+        app:layout_constraintVertical_bias="0.0">
+        <!--list heading-->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_transaction"
+            style="@style/DynamicTextColorStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15dp"
+            android:fontFamily="@font/lato_bold"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/transaction_list"
+            android:textSize="@dimen/_16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/transactionRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_0dp"
+            android:layout_marginHorizontal="@dimen/_15dp"
+            android:layout_marginTop="@dimen/_10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.551"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_transaction"
+            app:layout_constraintVertical_bias="0.0"
+            tools:listitem="@layout/item_transaction_history_recycler" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

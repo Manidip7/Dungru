@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_5dp"
+    android:background="@color/white">
+    <!--Profile details-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgFeedProfile"
+            android:layout_width="@dimen/_35dp"
+            android:layout_height="@dimen/_35dp"
+            android:layout_marginStart="@dimen/_15dp"
+            android:layout_marginTop="@dimen/_10dp"
+            android:layout_marginEnd="@dimen/_10dp"
+            android:layout_marginBottom="@dimen/_10dp"
+            android:src="@drawable/user_placeholder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/MyProfileImageShape" />
+
+        <LinearLayout
+            android:id="@+id/profileInfoLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_10dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/imgFeedProfile"
+            app:layout_constraintStart_toEndOf="@+id/imgFeedProfile"
+            app:layout_constraintTop_toTopOf="@+id/imgFeedProfile">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtFeedName"
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_bold"
+                android:text="Name"
+                android:textSize="@dimen/_14sp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtFeedTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5dp"
+                android:fontFamily="@font/lato_regular"
+                android:textColor="@color/hint_color_grey"
+                android:text="Time"
+                android:textSize="@dimen/_10sp" />
+        </LinearLayout>
+
+        <!--Follow Button-->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_follow"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_30dp"
+            android:layout_marginEnd="@dimen/_15dp"
+            android:background="@drawable/bg_rounded_btn_pink_color_stroke"
+            android:text="@string/follow"
+            android:textAllCaps="false"
+            android:textColor="@color/pink"
+            android:textSize="@dimen/_12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="@dimen/_0dp"
+            android:layout_height="@dimen/_0dp"
+            android:layout_margin="@dimen/_2dp"
+            android:progressTint="@color/pink"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_follow"
+            app:layout_constraintEnd_toEndOf="@+id/btn_follow"
+            app:layout_constraintStart_toStartOf="@+id/btn_follow"
+            app:layout_constraintTop_toTopOf="@+id/btn_follow" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/captionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+        <!--Caption-->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10dp"
+            style="@style/DynamicTextColorStyle"
+            android:textSize="@dimen/_14sp"
+            android:text="dummy caption text"
+            android:fontFamily="@font/lato_bold" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_see_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/hint_color_grey"
+            android:text="@string/see_more"
+            android:visibility="gone"
+            android:layout_marginHorizontal="@dimen/_10dp"
+            android:textSize="@dimen/_12sp"
+            android:fontFamily="@font/lato_bold" />
+    </LinearLayout>
+
+    <!--Content View-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/captionLayout">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="@dimen/_500dp"
+            android:minHeight="@dimen/_400dp"
+            android:maxWidth="@dimen/_500dp"
+            android:minWidth="@dimen/_300dp"
+            android:layout_marginHorizontal="@dimen/_15dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:layout_marginBottom="@dimen/_5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/demo_feed_img"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/video_play_view"
+            android:layout_width="@dimen/_50dp"
+            android:layout_height="@dimen/_50dp"
+            android:src="@drawable/ic_video_play"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/img_content" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--Like, Comment, Share-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15dp"
+        android:layout_marginBottom="@dimen/_5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <!--Like Button-->
+        <LinearLayout
+            android:id="@+id/btn_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ic_like"
+                style="@style/DynamicIconColorStyle"
+                android:layout_width="@dimen/_35dp"
+                android:layout_height="@dimen/_35dp"
+                android:clickable="false"
+                app:icon="@drawable/ic_like"
+                app:iconGravity="textStart"
+                app:iconSize="@dimen/_20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--            <com.google.android.material.textview.MaterialTextView-->
+<!--                android:id="@+id/txt_number_of_likes"-->
+<!--                style="@style/DynamicTextColorStyle"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:fontFamily="@font/lato_regular"-->
+<!--                android:maxLines="1"-->
+<!--                android:text="1.5k"-->
+<!--                android:textSize="@dimen/_12sp" />-->
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/btn_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5dp"
+            android:checkable="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_like"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ic_comment"
+                style="@style/DynamicIconColorStyle"
+                android:layout_width="@dimen/_35dp"
+                android:layout_height="@dimen/_35dp"
+                app:icon="@drawable/ic_comment"
+                android:clickable="false"
+                app:iconGravity="textStart"
+                app:iconSize="@dimen/_20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+<!--            <com.google.android.material.textview.MaterialTextView-->
+<!--                android:id="@+id/txt_number_of_comments"-->
+<!--                style="@style/DynamicTextColorStyle"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:fontFamily="@font/lato_regular"-->
+<!--                android:maxLines="1"-->
+<!--                android:text="2k"-->
+<!--                android:textSize="@dimen/_12sp" />-->
+        </LinearLayout>
+
+        <!--Share Button-->
+        <LinearLayout
+            android:id="@+id/btn_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_comment"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ic_share"
+                style="@style/DynamicIconColorStyle"
+                android:layout_width="@dimen/_35dp"
+                android:layout_height="@dimen/_35dp"
+                android:clickable="false"
+                app:icon="@drawable/ic_share"
+                app:iconGravity="textStart"
+                app:iconSize="@dimen/_20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+<!--            <com.google.android.material.textview.MaterialTextView-->
+<!--                android:id="@+id/txt_number_of_share"-->
+<!--                style="@style/DynamicTextColorStyle"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:fontFamily="@font/lato_regular"-->
+<!--                android:maxLines="1"-->
+<!--                android:text="@string/_1k"-->
+<!--                android:textSize="@dimen/_12sp" />-->
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_more"
+            style="@style/DynamicIconColorStyle"
+            android:layout_width="@dimen/_35dp"
+            android:layout_height="@dimen/_35dp"
+            app:icon="@drawable/ic_more"
+            app:iconGravity="textStart"
+            app:iconSize="@dimen/_20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

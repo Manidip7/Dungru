@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    tools:context=".ui.setting.settingfragments.EmailUpdateOtpFragment">
+
+    <!--BackGround Img-->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBack"
+        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+        android:layout_width="@dimen/_40dp"
+        android:layout_height="@dimen/_40dp"
+        android:layout_margin="@dimen/_10dp"
+        android:backgroundTint="@color/bg_back_btn_color"
+        android:elevation="15dp"
+        app:icon="@drawable/arrow_back"
+        app:iconSize="@dimen/_20dp"
+        app:iconTint="@color/pink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3">
+
+        <!--Heading-->
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/DynamicTextColorStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_bold"
+            android:text="@string/otp_verification"
+            android:textSize="@dimen/_32sp" />
+        <!--Descriptions-->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txt_user_note"
+            style="@style/DynamicTextColorStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10dp"
+            android:layout_marginEnd="@dimen/_45dp"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/we_have_send_you_code_in_your_email_address"
+            android:textSize="@dimen/_16sp" />
+
+        <!--Email-->
+        <LinearLayout
+            android:id="@+id/otpLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/otp_item1"
+                style="@style/MyEditTextStyle"
+                android:layout_width="@dimen/_60dp"
+                android:layout_height="@dimen/_60dp"
+                android:background="@drawable/otp_empty_shape"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textSize="@dimen/_32sp" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/otp_item2"
+                style="@style/MyEditTextStyle"
+                android:layout_width="@dimen/_60dp"
+                android:layout_height="@dimen/_60dp"
+                android:layout_marginStart="@dimen/_10dp"
+                android:background="@drawable/otp_empty_shape"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textSize="@dimen/_32sp" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/otp_item3"
+                style="@style/MyEditTextStyle"
+                android:layout_width="@dimen/_60dp"
+                android:layout_height="@dimen/_60dp"
+                android:layout_marginStart="@dimen/_10dp"
+                android:background="@drawable/otp_empty_shape"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textSize="@dimen/_32sp" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/otp_item4"
+                style="@style/MyEditTextStyle"
+                android:layout_width="@dimen/_60dp"
+                android:layout_height="@dimen/_60dp"
+                android:layout_marginStart="@dimen/_10dp"
+                android:background="@drawable/otp_empty_shape"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textSize="@dimen/_32sp" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_130dp">
+            <!--Verify Code Button-->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnVerify"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded_gradiant_color_button_50dp"
+                android:fontFamily="@font/lato_bold"
+                android:text="@string/verify_code"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--loading bar-->
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_130dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/loading_animation_livepage" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--Resend Code layout-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--timer-->
+            <TextView
+                android:id="@+id/resend_timer"
+                style="@style/DynamicTextColorStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_regular"
+                android:text="00:60"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--resend button-->
+            <TextView
+                android:id="@+id/btn_resend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_bold"
+                android:text="@string/resend_code"
+                android:textColor="@color/text_color_blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

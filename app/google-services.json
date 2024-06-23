@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "649190876143",
+    "project_id": "dungru-43d15",
+    "storage_bucket": "dungru-43d15.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:649190876143:android:837c98af6d424948578c1a",
+        "android_client_info": {
+          "package_name": "com.aksar.dungru"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "649190876143-n91qb8nap9t1aeg9rsilibdun17hanol.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aksar.dungru",
+            "certificate_hash": "5b906224465ba03bfe49548ff56b9994f8d2f3b5"
+          }
+        },
+        {
+          "client_id": "649190876143-6c2ka2povis2q0pssid9np5ucv8vmitd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbybvbCmHnQbotNq-AqkkPOUsPvd_0gFk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "649190876143-6c2ka2povis2q0pssid9np5ucv8vmitd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
